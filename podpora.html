@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Podpora – Autoškola</title>
+<meta name="description" content="Podpora aplikace Autoškola – testy na řidičák pro všechny skupiny. Kontakt a časté otázky.">
+<style>
+  :root { --bg: #f4f6fa; --card: #ffffff; --text: #141a2a; --muted: #5a6478; --line: #e3e7ef; --accent: #ffa412; --link: #1f5eff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0d1117; --card: #161b24; --text: #e8ecf3; --muted: #9aa4b5; --line: #262d3a; --link: #6c96ff; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif; -webkit-text-size-adjust: 100%; }
+  header { background: linear-gradient(135deg, #ffd84a, #ffa412); color: #141a2a; padding: 2.2rem 1.25rem 1.8rem; }
+  header .in, main { max-width: 46rem; margin: 0 auto; }
+  header p { margin: 0.3rem 0 0; font-weight: 600; }
+  h1 { margin: 0; font-size: 1.75rem; line-height: 1.25; }
+  main { padding: 1.25rem; }
+  .box { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 1rem 1.25rem; margin: 0 0 1rem; }
+  .contact { border-left: 6px solid var(--accent); }
+  h2 { font-size: 1.15rem; margin: 1.6rem 0 0.4rem; }
+  details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 0.7rem 1rem; margin: 0 0 0.6rem; }
+  summary { font-weight: 650; cursor: pointer; }
+  p, li { margin: 0.4rem 0; }
+  a { color: var(--link); }
+  .muted { color: var(--muted); font-size: 0.92rem; }
+  .todo { background: #fff3c4; color: #5a4300; padding: 0 0.3rem; border-radius: 4px; }
+  footer { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem 2.5rem; }
+</style>
+</head>
+<body>
+<header>
+  <div class="in">
+    <h1>Autoškola – podpora</h1>
+    <p>Testy na řidičák pro všechny skupiny (iPhone a Android)</p>
+  </div>
+</header>
+<main>
+  <div class="box contact">
+    <strong>Kontakt:</strong> <a href="mailto:smooth@email.cz">smooth@email.cz</a> (Michal Kůrka)<br>
+    Napište nám, když najdete chybu v otázce nebo v aplikaci, nebo máte nápad na vylepšení. U chyby v otázce prosím
+    uveďte její kód (např. RP0606468 – je v detailu otázky) a verzi aplikace (Více → O aplikaci).
+  </div>
+
+  <h2>Časté otázky</h2>
+  <details>
+    <summary>Je aplikace oficiální?</summary>
+    <p>Ne. Je to neoficiální výuková aplikace, není spojena s Ministerstvem dopravy ČR ani s Asociací autoškol ČR.
+      Otázky jsou ale oficiální – pocházejí z Věstníku dopravy, který zveřejňuje Ministerstvo dopravy (eTesty).</p>
+  </details>
+  <details>
+    <summary>Proč má moje skupina méně otázek, než je na webu ministerstva?</summary>
+    <p>Web ministerstva uvádí všech 1 136 otázek dohromady. Část otázek ze zásad bezpečné jízdy patří jen motocyklům,
+      jen osobním autům nebo jen nákladním autům a autobusům. Aplikace vám ukazuje jen otázky vaší skupiny.</p>
+  </details>
+  <details>
+    <summary>Odpovídá ostrý test skutečné zkoušce?</summary>
+    <p>Složení odpovídá § 17 vyhlášky č. 167/2002 Sb.: 25 otázek ze 7 okruhů, 50 bodů, k úspěchu 43 bodů, 30 minut.
+      Otázky se losují náhodně ze všech oficiálních otázek pro vaši skupinu.</p>
+  </details>
+  <details>
+    <summary>Potřebuje aplikace internet?</summary>
+    <p>Ne. Otázky, obrázky i videa jsou součástí aplikace a fungují i v letadlovém režimu. Nové otázky přicházejí
+      s aktualizací aplikace.</p>
+  </details>
+  <details>
+    <summary>Jak přenesu pokrok do jiného telefonu?</summary>
+    <p>V aplikaci otevřete Více → Nastavení → Pokrok → <em>Uložit zálohu do souboru</em> a soubor si uložte (např. do
+      Souborů nebo pošlete e-mailem sobě). V novém telefonu zvolte <em>Obnovit ze zálohy</em> a soubor vyberte.</p>
+  </details>
+  <details>
+    <summary>Jak smažu svůj pokrok?</summary>
+    <p>Více → Nastavení → Pokrok → <em>Smazat pokrok</em>. Nastavení zůstane, odpovědi a výsledky testů se smažou.
+      Všechno smažete také odinstalováním aplikace.</p>
+  </details>
+  <details>
+    <summary>Sbírá aplikace nějaké údaje?</summary>
+    <p>Ne. Nemá účet, reklamy ani analytiku a nic neodesílá. Podrobnosti jsou v
+      <a href="zasady-ochrany-soukromi.html">zásadách ochrany osobních údajů</a>.</p>
+  </details>
+  <details>
+    <summary>Kolik aplikace stojí?</summary>
+    <p>Aplikace je zdarma, bez reklam a bez omezení.</p>
+  </details>
+</main>
+<footer>
+  <p class="muted">Zdroj otázek: Ministerstvo dopravy ČR (eTesty, Věstník dopravy). Obrázky a videa © Česká republika –
+    Ministerstvo dopravy a © Asociace autoškol ČR. · <a href="zasady-ochrany-soukromi.html">Ochrana soukromí</a></p>
+</footer>
+</body>
+</html>
