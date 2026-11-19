@@ -143,5 +143,12 @@
     <p><a href="podpora.html">Podpora a kontakt</a> · <a href="zasady-ochrany-soukromi.html">Zásady ochrany soukromí</a></p>
   </div>
 </footer>
+<script>
+  /* Kampaňový odkaz Applu (pt/ct) funguje jen na iPhonu/iPadu; na počítači vrací 404 → tam vést na běžnou stránku v App Storu. */
+  (function () {
+    var ios = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (!ios) document.querySelectorAll('a.cta').forEach(function (a) { a.href = 'https://apps.apple.com/cz/app/id6832381841'; });
+  })();
+</script>
 </body>
 </html>
