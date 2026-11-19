@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Autoškola – testy na řidičák v mobilu</title>
+<meta name="description" content="Všech 1 136 oficiálních otázek z Věstníku dopravy a ostrý test jako na úřadě. Aplikace pro iPhone, základ zdarma, bez reklam a bez registrace.">
+<meta property="og:title" content="Autoškola – testy na řidičák v mobilu">
+<meta property="og:description" content="1 136 oficiálních otázek a ostrý test jako na úřadě. Pro iPhone, základ zdarma.">
+<meta property="og:image" content="https://smoothxpi.github.io/autoskola-web/ikona-192.png">
+<meta name="theme-color" content="#ffc22e">
+<link rel="icon" href="ikona-192.png">
+<style>
+  @font-face { font-family: "Inter"; src: url("inter-cs.woff2") format("woff2"); font-weight: 400 900; font-display: swap; }
+  :root {
+    --sun: #ffd84a; --amber: #ffa412; --ink: #141a2a; --ink-2: #3b3420;
+    --paper: #fffaf0; --line: rgba(20, 26, 42, 0.12); --ok: #1f7a3d; --link: #1f4fd6;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; color: var(--ink); background: var(--amber);
+    font: 17px/1.55 "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .hero {
+    background: radial-gradient(120% 70% at 20% 0%, #ffe680 0%, var(--sun) 35%, var(--amber) 100%);
+    padding: max(1.25rem, env(safe-area-inset-top)) 1rem 0; overflow: hidden;
+  }
+  .wrap { max-width: 64rem; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 0.7rem; font-weight: 800; font-size: 1.35rem; letter-spacing: -0.01em; }
+  .brand img { width: 48px; height: 48px; border-radius: 12px; box-shadow: 0 4px 14px rgba(120, 70, 0, 0.25); }
+  .grid { display: grid; gap: 1.5rem; padding: 1.75rem 0 0; }
+  h1 {
+    margin: 0; font-size: clamp(2.6rem, 11vw, 4.6rem); line-height: 0.98; font-weight: 900;
+    letter-spacing: -0.035em; text-wrap: balance;
+  }
+  .lead { margin: 1rem 0 0; font-size: 1.2rem; font-weight: 700; color: var(--ink-2); max-width: 30rem; text-wrap: balance; }
+  .cta {
+    display: inline-flex; flex-direction: column; gap: 0.15rem; margin: 1.5rem 0 0; padding: 1rem 1.5rem;
+    background: var(--ink); color: #fff; text-decoration: none; border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(20, 26, 42, 0.28); transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .cta strong { font-size: 1.2rem; font-weight: 800; }
+  .cta strong span { color: var(--sun); }
+  .cta small { color: #c9cfdb; font-size: 0.9rem; font-weight: 600; }
+  .cta:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(20, 26, 42, 0.32); }
+  .cta:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  .checks { list-style: none; padding: 0; margin: 1.6rem 0 0; display: grid; gap: 0.7rem; font-weight: 650; font-size: 1.05rem; }
+  .checks li { display: grid; grid-template-columns: 1.7rem 1fr; gap: 0.6rem; align-items: start; }
+  .checks li::before {
+    content: "✓"; display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 7px;
+    background: var(--ink); color: var(--sun); font-weight: 900; font-size: 0.95rem;
+  }
+  .phones { display: flex; justify-content: center; align-items: flex-end; gap: 0.75rem; }
+  .phones img { display: block; width: min(68vw, 270px); height: auto; filter: drop-shadow(0 18px 30px rgba(110, 60, 0, 0.35)); }
+  .phones img + img { display: none; }
+  main { background: var(--paper); padding: 2rem 1rem 1rem; }
+  h2 { margin: 0 0 1rem; font-size: 1.5rem; font-weight: 850; letter-spacing: -0.02em; text-wrap: balance; }
+  .plans { display: grid; gap: 1rem; }
+  .plan { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 1.1rem 1.25rem; }
+  .plan h3 { margin: 0; font-size: 1.15rem; font-weight: 800; }
+  .plan .price { margin: 0.2rem 0 0.6rem; font-weight: 700; color: #6b5a2a; }
+  .plan.full { border: 2px solid var(--amber); }
+  .plan ul { margin: 0; padding-left: 1.1rem; }
+  .plan li { margin: 0.25rem 0; }
+  .again { text-align: center; padding: 1.5rem 0 0.5rem; }
+  footer { background: var(--paper); color: #5b5546; font-size: 0.88rem; padding: 1rem 1rem max(2rem, env(safe-area-inset-bottom)); }
+  footer p { margin: 0.45rem 0; max-width: 46rem; }
+  footer a { color: var(--link); }
+  @media (min-width: 760px) {
+    .hero { padding-top: 2rem; }
+    .grid { grid-template-columns: 1.1fr 1fr; align-items: end; gap: 2rem; padding-top: 2.5rem; }
+    .grid > div:first-child { padding-bottom: 3rem; }
+    .phones img { width: 240px; }
+    .phones img + img { display: block; transform: translateY(-1.5rem); }
+    .plans { grid-template-columns: 1fr 1fr; }
+    main, footer { padding-left: 2rem; padding-right: 2rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { .cta { transition: none; } .cta:hover { transform: none; } }
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="wrap">
+    <div class="brand"><img src="ikona-192.png" alt="" width="48" height="48">Autoškola</div>
+    <div class="grid">
+      <div>
+        <h1>Testy na řidičák v&nbsp;mobilu</h1>
+        <p class="lead">Všech 1&nbsp;136 oficiálních otázek z&nbsp;Věstníku dopravy a&nbsp;ostrý test jako na úřadě.</p>
+        <a class="cta" href="https://apps.apple.com/app/apple-store/id6832381841?pt=129713028&amp;ct=meta-test-1&amp;mt=8">
+          <strong>Stáhni si <span>Autoškolu</span> v&nbsp;App&nbsp;Storu</strong>
+          <small>Pro iPhone · základ zdarma</small>
+        </a>
+        <ul class="checks">
+          <li>Ostrý test jako na úřadě: 25 otázek, 30 minut, k úspěchu 43 bodů</li>
+          <li>Chytré opakování chyb, dokud je neumíš</li>
+          <li>Bez reklam, bez registrace, funguje i offline</li>
+        </ul>
+      </div>
+      <div class="phones">
+        <img src="test.webp" alt="Ostrý test v aplikaci Autoškola: otázka s dopravní značkou" width="540" height="1150">
+        <img src="vysledek.webp" alt="Výsledek testu 48 z 50 bodů s rozborem podle okruhů" width="540" height="1150">
+      </div>
+    </div>
+  </div>
+</section>
+<main>
+  <div class="wrap">
+    <h2>Co dostaneš zdarma a co v plné verzi</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>Zdarma</h3>
+        <p class="price">bez registrace, bez reklam</p>
+        <ul>
+          <li>všech 1&nbsp;136 oficiálních otázek</li>
+          <li>učení po okruzích a vyhledávání</li>
+          <li>Moje chyby na jednom místě</li>
+          <li>3 ostré testy</li>
+        </ul>
+      </div>
+      <div class="plan full">
+        <h3>Plná verze</h3>
+        <p class="price">99 Kč jednorázově, žádné předplatné</p>
+        <ul>
+          <li>neomezené ostré testy</li>
+          <li>chytré opakování a opakování chyb</li>
+          <li>ukazatel připravenosti: odhad bodů a šance, že test složíš</li>
+        </ul>
+      </div>
+    </div>
+    <p class="again">
+      <a class="cta" href="https://apps.apple.com/app/apple-store/id6832381841?pt=129713028&amp;ct=meta-test-1&amp;mt=8">
+        <strong>Stáhnout v&nbsp;App&nbsp;Storu</strong>
+        <small>Pro iPhone · verze pro Android se připravuje</small>
+      </a>
+    </p>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <p><strong>Neoficiální aplikace.</strong> Není spojena s Ministerstvem dopravy ČR, s Asociací autoškol ČR ani s jiným státním orgánem a nereprezentuje je.</p>
+    <p>Zdroj otázek: Elektronický věstník dopravy Ministerstva dopravy ČR (eTesty) – <a href="https://etesty.md.gov.cz/ro/Bulletin">etesty.md.gov.cz/ro/Bulletin</a>.</p>
+    <p><a href="podpora.html">Podpora a kontakt</a> · <a href="zasady-ochrany-soukromi.html">Zásady ochrany soukromí</a></p>
+  </div>
+</footer>
+</body>
+</html>
